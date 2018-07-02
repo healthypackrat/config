@@ -1,4 +1,4 @@
-function! s:set_path()
+function! s:setup()
   if !executable('clang')
     return
   endif
@@ -15,13 +15,21 @@ function! s:set_path()
   let beg += 1
   let end -= 1
 
-  let paths = filter(map(lines[beg:end], 's:cleanup(v:val)'), 'isdirectory(v:val)')
+  let paths = filter(map(lines[beg:end], 's:sanitize(v:val)'), 'isdirectory(v:val)')
 
   let &l:path = '.,' . join(paths, ',') . ',,'
+
+  if exists('b:undo_ftplugin')
+    let b:undo_ftplugin .= ' | '
+  else
+    let b:undo_ftplugin = ''
+  endif
+
+  let b:undo_ftplugin .= 'setlocal path<'
 endfunction
 
-function! s:cleanup(str)
+function! s:sanitize(str)
   return substitute(substitute(a:str, '(.\{-})$', '', ''), '^\s\+\|\s\+$', '', 'g')
 endfunction
 
-call s:set_path()
+call s:setup()

@@ -126,6 +126,14 @@ function! s:on_FileType_python()
     let output = system('python -c ''import sys, os; sys.stdout.write(",".join([x for x in sys.path if os.path.isdir(x)]))''')
 
     let &l:path = '.,' . output . ',,'
+
+    if exists('b:undo_ftplugin')
+      let b:undo_ftplugin .= ' | '
+    else
+      let b:undo_ftplugin = ''
+    endif
+
+    let b:undo_ftplugin .= 'setlocal path<'
   endif
 endfunction
 
@@ -136,6 +144,14 @@ autocmd MyAutoCmd FileType ruby call s:on_FileType_ruby()
 function! s:on_FileType_ruby()
   " List modules, classes, methods, attributes, aliases, access controls and constants
   command! -buffer Toc g/\C^\s*\%(\<\%(module\|class\|def\|attr\%(_\w\+\)\=\|alias\%(_method\)\=\|public\|protected\|private\)\>\|\u\w*\s*=[=]\@!\)/nu
+
+  if exists('b:undo_ftplugin')
+    let b:undo_ftplugin .= ' | '
+  else
+    let b:undo_ftplugin = ''
+  endif
+
+  let b:undo_ftplugin .= 'delcommand Toc'
 endfunction
 
 " sh {{{2

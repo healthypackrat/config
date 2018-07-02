@@ -1,4 +1,4 @@
-function! s:set_path()
+function! s:setup()
   if !executable('ruby')
     return
   endif
@@ -15,6 +15,14 @@ function! s:set_path()
   endif
 
   let &l:path = 'lib,,' . join(gem_paths + std_paths, ',')
+
+  if exists('b:undo_ftplugin')
+    let b:undo_ftplugin .= ' | '
+  else
+    let b:undo_ftplugin = ''
+  endif
+
+  let b:undo_ftplugin .= 'setlocal path<'
 endfunction
 
-call s:set_path()
+call s:setup()
