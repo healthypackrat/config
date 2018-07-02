@@ -3,7 +3,9 @@ function! s:setup()
     return
   endif
 
-  let lines = split(system('clang -E -v - < /dev/null 2>&1'), '\n')
+  let cmd = printf('clang -E -v -x %s - < /dev/null 2>&1', &filetype ==# 'cpp' ? 'c++' : 'c')
+
+  let lines = split(system(cmd), '\n')
 
   let beg = index(lines, '#include <...> search starts here:')
   let end = index(lines, 'End of search list.')
