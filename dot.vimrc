@@ -133,7 +133,7 @@ function! s:on_FileType_python()
       let b:undo_ftplugin = ''
     endif
 
-    let b:undo_ftplugin .= 'setlocal path<'
+    let b:undo_ftplugin .= 'delcommand Toc | setlocal path<'
   endif
 endfunction
 
