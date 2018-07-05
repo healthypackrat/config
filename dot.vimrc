@@ -128,7 +128,7 @@ function! s:on_FileType_python()
     let &l:path = '.,' . output . ',,'
 
     if exists('b:undo_ftplugin')
-      let b:undo_ftplugin .= ' | '
+      let b:undo_ftplugin .= '|'
     else
       let b:undo_ftplugin = ''
     endif
@@ -146,7 +146,7 @@ function! s:on_FileType_ruby()
   command! -buffer Toc g/\C^\s*\%(\<\%(module\|class\|def\|attr\%(_\w\+\)\=\|alias\%(_method\)\=\|public\|protected\|private\)\>\|\u\w*\s*=[=]\@!\)/nu
 
   if exists('b:undo_ftplugin')
-    let b:undo_ftplugin .= ' | '
+    let b:undo_ftplugin .= '|'
   else
     let b:undo_ftplugin = ''
   endif

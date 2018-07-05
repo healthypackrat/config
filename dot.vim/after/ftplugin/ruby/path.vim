@@ -17,7 +17,7 @@ function! s:setup()
   let &l:path = 'lib,,' . join(gem_paths + std_paths, ',')
 
   if exists('b:undo_ftplugin')
-    let b:undo_ftplugin .= ' | '
+    let b:undo_ftplugin .= '|'
   else
     let b:undo_ftplugin = ''
   endif
