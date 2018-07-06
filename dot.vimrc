@@ -112,6 +112,16 @@ function! s:on_FileType_eruby()
   inoremap <buffer> <LocalLeader>e <lt>%<Space><Space>%><Left><Left><Left>
   inoremap <buffer> <LocalLeader>q <lt>%-<Space><Space>-%><Left><Left><Left><Left>
   inoremap <buffer> <LocalLeader>x <lt>%=<Space>%><Left><Left><Left>
+
+  if exists('b:undo_ftplugin')
+    let b:undo_ftplugin .= '|'
+  else
+    let b:undo_ftplugin = ''
+  endif
+
+  let b:undo_ftplugin .= 'silent! iunmap <buffer> <LocalLeader>e'
+  let b:undo_ftplugin .= '|silent! iunmap <buffer> <LocalLeader>q'
+  let b:undo_ftplugin .= '|silent! iunmap <buffer> <LocalLeader>x'
 endfunction
 
 " python {{{2
