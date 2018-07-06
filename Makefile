@@ -12,6 +12,7 @@ sources = \
   dot.tmux.conf \
   dot.vim/after/ftplugin/c/path.vim \
   dot.vim/after/ftplugin/ruby/path.vim \
+  dot.vim/ftdetect/ruby.vim \
   dot.vim/ftdetect/vue.vim \
   dot.vimrc
 
