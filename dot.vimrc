@@ -162,7 +162,21 @@ let g:is_bash = 1
 
 let g:vim_indent_cont = 0
 
-autocmd MyAutoCmd FileType vim setlocal textwidth=0
+autocmd MyAutoCmd FileType vim call s:on_FileType_vim()
+
+function! s:on_FileType_vim()
+  let &l:path = '.,' . &runtimepath . ',,'
+
+  setlocal textwidth=0
+
+  if exists('b:undo_ftplugin')
+    let b:undo_ftplugin .= '|'
+  else
+    let b:undo_ftplugin = ''
+  endif
+
+  let b:undo_ftplugin .= 'setlocal path< textwidth<'
+endfunction
 
 " __END__ {{{1
 " vim: foldmethod=marker
