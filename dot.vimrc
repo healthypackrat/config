@@ -132,18 +132,20 @@ function! s:on_FileType_python()
   " List classes and methods
   command! -buffer Toc g/\C^\s*\<\%(class\|def\)\>/nu
 
+  if exists('b:undo_ftplugin')
+    let b:undo_ftplugin .= '|'
+  else
+    let b:undo_ftplugin = ''
+  endif
+
+  let b:undo_ftplugin .= 'delcommand Toc'
+
   if executable('python')
     let output = system('python -c ''import sys, os; sys.stdout.write(",".join([x for x in sys.path if os.path.isdir(x)]))''')
 
     let &l:path = '.,' . output . ',,'
 
-    if exists('b:undo_ftplugin')
-      let b:undo_ftplugin .= '|'
-    else
-      let b:undo_ftplugin = ''
-    endif
-
-    let b:undo_ftplugin .= 'delcommand Toc | setlocal path<'
+    let b:undo_ftplugin .= '|setlocal path<'
   endif
 endfunction
 
