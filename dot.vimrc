@@ -1,9 +1,5 @@
 " Startup {{{1
 
-filetype plugin indent on
-
-syntax enable
-
 augroup MyAutoCmd
   autocmd!
 augroup END
@@ -19,6 +15,10 @@ function! s:set_runtimepath()
 endfunction
 
 call s:set_runtimepath()
+
+filetype plugin indent on
+
+syntax enable
 
 " Options {{{1
 
