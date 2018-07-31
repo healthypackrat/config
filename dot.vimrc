@@ -71,6 +71,9 @@ let g:maplocalleader = ','
 nnoremap <C-n> gt
 nnoremap <C-p> gT
 
+nnoremap <Leader>e :e %:h/
+nnoremap <Leader>n :new %:h/
+
 inoremap <silent> <Leader>d <C-r>=strftime('%Y/%m/%d')<Return>
 inoremap <silent> <Leader>t <C-r>=strftime('%Y/%m/%d %H:%m:%d')<Return>
 
