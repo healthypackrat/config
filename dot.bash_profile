@@ -1,4 +1,6 @@
-export SYSTEM_PATH="$PATH"
+if [ -z "$SYSTEM_PATH" ]; then
+  export SYSTEM_PATH="$PATH"
+fi
 
 export EDITOR='vim'
 
