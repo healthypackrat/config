@@ -71,6 +71,8 @@ let g:maplocalleader = ','
 nnoremap <C-n> gt
 nnoremap <C-p> gT
 
+nnoremap <silent> <C-l> :nohlsearch<Return><C-l>
+
 nnoremap <Leader>e :e %:h/
 nnoremap <Leader>n :new %:h/
 
