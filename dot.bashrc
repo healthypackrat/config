@@ -24,6 +24,10 @@ if which brew > /dev/null 2>&1; then
   fi
 fi
 
+if which goenv > /dev/null 2>&1; then
+  eval "$(goenv init -)"
+fi
+
 if which heroku > /dev/null 2>&1; then
   eval "$(heroku autocomplete:script bash)"
 fi
