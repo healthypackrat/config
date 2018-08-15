@@ -1,2 +1,2 @@
---regex-ruby=/^[\t ]*([A-Z][0-9A-Z_a-z]*)[\t ]*=/\1/s,constant,constants/
+--regex-ruby=/^[\t ]*([A-Z][0-9A-Z_a-z]*)[\t ]*=([\t ]|$)/\1/s,constant,constants/
 --regex-ruby=/^[\t ]*alias(_method)?[\t ]+:?([0-9A-Z_a-z]+[!?]?)/\2/a,alias,aliases/
