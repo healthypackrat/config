@@ -159,6 +159,9 @@ endfunction
 autocmd MyAutoCmd FileType ruby call s:on_FileType_ruby()
 
 function! s:on_FileType_ruby()
+  inoreabbrev <buffer> def def<Return>end<Up><End>
+  inoreabbrev <buffer> defi def<Space>initialize<Return>end<Up><End>
+
   " List modules, classes, methods, attributes, aliases, access controls and constants
   command! -buffer Toc g/\C^\s*\%(\<\%(module\|class\|def\|attr\%(_\w\+\)\=\|alias\%(_method\)\=\|public\|protected\|private\)\>\|\u\w*\s*=[=]\@!\)/nu
 
@@ -168,7 +171,9 @@ function! s:on_FileType_ruby()
     let b:undo_ftplugin = ''
   endif
 
-  let b:undo_ftplugin .= 'delcommand Toc'
+  let b:undo_ftplugin .= 'silent! iunabbrev <buffer> def'
+  let b:undo_ftplugin .= '|silent! iunabbrev <buffer> defi'
+  let b:undo_ftplugin .= '|delcommand Toc'
 endfunction
 
 " sh {{{2
