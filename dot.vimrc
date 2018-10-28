@@ -23,6 +23,7 @@ syntax enable
 " Options {{{1
 
 set backspace=indent,eol,start
+set fileformats=unix,dos,mac
 set history=200
 set laststatus=2
 set list
