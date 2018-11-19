@@ -43,3 +43,7 @@ fi
 if which rbenv > /dev/null 2>&1; then
   eval "$(rbenv init -)"
 fi
+
+if which stack > /dev/null 2>&1; then
+  eval "$(stack --bash-completion-script stack)"
+fi
