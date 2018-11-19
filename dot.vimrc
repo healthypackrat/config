@@ -32,6 +32,7 @@ set nobackup
 set noswapfile
 set pastetoggle=<C-@>
 set ruler
+set scrolloff=5
 set showcmd
 set tags=./tags;,tags;
 
