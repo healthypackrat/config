@@ -9,6 +9,8 @@ alias ll='l -l'
 
 alias be='bundle exec'
 
+alias st='git status'
+
 if which terminal-notifier-alert > /dev/null 2>&1; then
   alias alert='terminal-notifier-alert $? "$(history | tail -1)"'
 fi
