@@ -78,6 +78,10 @@ nnoremap <silent> <C-l> :nohlsearch<Return><C-l>
 nnoremap <Leader>e :e %:h/
 nnoremap <Leader>n :new %:h/
 
+nnoremap <Leader>d <Nop>
+nnoremap <Leader>dd :windo diffthis<Return>
+nnoremap <Leader>do :windo diffoff<Return>
+
 inoremap <silent> <Leader>d <C-r>=strftime('%Y/%m/%d')<Return>
 inoremap <silent> <Leader>t <C-r>=strftime('%Y/%m/%d %H:%m:%d')<Return>
 
