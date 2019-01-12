@@ -17,3 +17,5 @@ gitconfig alias.ld "log --format=tformat:'%h [%aD] %s'"
 gitconfig alias.ln 'log --name-status'
 gitconfig alias.lso 'ls-files -o'
 gitconfig alias.st status
+gitconfig alias.uncommit 'reset --soft HEAD^'
+gitconfig alias.unstage 'reset HEAD'
