@@ -168,7 +168,7 @@ function! s:on_FileType_ruby()
   inoreabbrev <buffer> def def<Return>end<Up><End>
   inoreabbrev <buffer> defi def<Space>initialize<Return>end<Up><End>
 
-  nnoremap <buffer> <LocalLeader>r :up <Bar> !clear; bin/rspec<Space>
+  nnoremap <buffer> <LocalLeader><LocalLeader> :up <Bar> !clear; bin/rspec<Space>
 
   " List modules, classes, methods, attributes, aliases, access controls and constants
   command! -buffer Toc g/\C^\s*\%(\<\%(module\|class\|def\|attr\%(_\w\+\)\=\|alias\%(_method\)\=\|public\|protected\|private\)\>\|\u\w*\s*=[=]\@!\)/nu
@@ -181,7 +181,7 @@ function! s:on_FileType_ruby()
 
   let b:undo_ftplugin .= 'silent! iunabbrev <buffer> def'
   let b:undo_ftplugin .= '|silent! iunabbrev <buffer> defi'
-  let b:undo_ftplugin .= '|silent! nunmap <buffer> <LocalLeader>r'
+  let b:undo_ftplugin .= '|silent! nunmap <buffer> <LocalLeader><LocalLeader>'
   let b:undo_ftplugin .= '|delcommand Toc'
 endfunction
 
