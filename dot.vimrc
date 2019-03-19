@@ -135,6 +135,10 @@ function! s:on_FileType_eruby()
   let b:undo_ftplugin .= '|silent! iunmap <buffer> <LocalLeader>x'
 endfunction
 
+" go {{{2
+
+autocmd MyAutoCmd FileType go setlocal shiftwidth=8 softtabstop=2 noexpandtab
+
 " python {{{2
 
 autocmd MyAutoCmd FileType python call s:on_FileType_python()
