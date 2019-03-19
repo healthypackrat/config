@@ -172,7 +172,7 @@ function! s:on_FileType_ruby()
   inoreabbrev <buffer> def def<Return>end<Up><End>
   inoreabbrev <buffer> defi def<Space>initialize<Return>end<Up><End>
 
-  nnoremap <buffer> <LocalLeader><LocalLeader> :execute 'windo up' <Bar> !clear; bin/rspec %
+  nnoremap <buffer> <LocalLeader><LocalLeader> :up <Bar> !clear; bin/rspec %
 
   " List modules, classes, methods, attributes, aliases, access controls and constants
   command! -buffer Toc g/\C^\s*\%(\<\%(module\|class\|def\|attr\%(_\w\+\)\=\|alias\%(_method\)\=\|public\|protected\|private\)\>\|\u\w*\s*=[=]\@!\)/nu
