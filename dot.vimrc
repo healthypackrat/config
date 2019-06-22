@@ -139,6 +139,10 @@ endfunction
 
 autocmd MyAutoCmd FileType go setlocal shiftwidth=8 softtabstop=2 noexpandtab
 
+" php {{{2
+
+autocmd MyAutoCmd FileType php setlocal shiftwidth=4
+
 " python {{{2
 
 autocmd MyAutoCmd FileType python call s:on_FileType_python()
