@@ -30,10 +30,6 @@ if which goenv > /dev/null 2>&1; then
   eval "$(goenv init -)"
 fi
 
-if which heroku > /dev/null 2>&1; then
-  eval "$(heroku autocomplete:script bash)"
-fi
-
 if which nodenv > /dev/null 2>&1; then
   eval "$(nodenv init -)"
 fi
