@@ -55,7 +55,7 @@ set wildignore&
 set wildignore+=*.class
 set wildignore+=*.o
 
-set fileencodings=ucs-bom,iso-2022-jp-3,euc-jisx0213,euc-jp,cp932,utf-8,latin1
+set fileencodings=ucs-bom,iso-2022-jp-3,euc-jisx0213,euc-jp,utf-8,latin1
 
 autocmd MyAutoCmd BufReadPost * call s:reset_fileencoding()
 
