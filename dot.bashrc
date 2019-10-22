@@ -11,6 +11,9 @@ alias be='bundle exec'
 
 alias st='git status'
 
+alias g='cd $(ghq root)/$(ghq list | peco)'
+alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
+
 if which terminal-notifier-alert > /dev/null 2>&1; then
   alias alert='terminal-notifier-alert $? "$(history | tail -1)"'
 fi
