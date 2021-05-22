@@ -50,3 +50,7 @@ fi
 if which stack > /dev/null 2>&1; then
   eval "$(stack --bash-completion-script stack)"
 fi
+
+if which direnv > /dev/null 2>&1; then
+  eval "$(direnv hook bash)"
+fi
