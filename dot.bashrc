@@ -31,10 +31,6 @@ if which brew > /dev/null 2>&1; then
   fi
 fi
 
-if which goenv > /dev/null 2>&1; then
-  eval "$(goenv init -)"
-fi
-
 if which nodenv > /dev/null 2>&1; then
   eval "$(nodenv init -)"
 fi
