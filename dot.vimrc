@@ -70,6 +70,9 @@ endfunction
 let g:mapleader = ';'
 let g:maplocalleader = ','
 
+nnoremap <Bslash> ;
+nnoremap <Space> ,
+
 nnoremap <C-n> gt
 nnoremap <C-p> gT
 
